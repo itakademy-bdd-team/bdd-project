@@ -13,7 +13,7 @@ class BooksController extends Controller
      */
     public function index()
     {
-      
+
 
         $books = array(
             array('id' => 1, 'title' => 'Book 1'),
