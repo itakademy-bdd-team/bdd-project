@@ -73,7 +73,18 @@
                     List of books
                 </div>
                 @foreach ($books as $book)
-                    <p>{{ $book['title'] }}</p>
+                    <p>{{ $book['title'] }}
+                      <li>
+                        <a href="{{route('books.edit',['id'=>$book['id']])}}" class="btn btn-primary btn-lg" ><span class="glyphicon glyphicon-user"></span><br>EDITER</a>
+                      </li>
+                      <li>
+                        <a href="{{route('books.show',['id'=>$book['id']])}}" class="btn btn-primary btn-lg" ><span class="glyphicon glyphicon-user"></span><br>VOIR</a>
+                      </li>
+                      <li>
+                        <a href="{{route('books.create',['id'=>$book['id']])}}" class="btn btn-primary btn-lg" ><span class="glyphicon glyphicon-user"></span><br>CREER</a>
+                      </li>
+                    </p>
+
                 @endforeach
 
 
