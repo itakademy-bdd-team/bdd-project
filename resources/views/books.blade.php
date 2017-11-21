@@ -68,15 +68,19 @@
     <body>
         <div class="flex-center position-ref full-height">
 
-
             <div class="content">
                 <div class="title m-b-md">
                     List of books
                 </div>
+                <ul>
                 @foreach ($books as $book)
-                    <p>{{ $book['title'] }}</p>
+                    <li>
+                        <a href="{{ route('books.show', ['id' => $book['id']] ) }}">{{ $book['title'] }}</a>
+                        <a href="{{ route('books.edit', ['id' => $book['id']] ) }}">Edit</a>
+                        <a href="{{ route('books.destroy', ['id' => $book['id']] ) }}">Delete</a>
+                    </li>
                 @endforeach
-
+                </ul>
 
             </div>
         </div>

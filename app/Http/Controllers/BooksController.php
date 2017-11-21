@@ -17,22 +17,7 @@ class BooksController extends Controller
 
         $books = Books::all();
 
-        foreach ($books as $book) {
-            echo $book->id;
-        }
-
-        /*$books = array(
-            array('id' => 1, 'title' => 'Book 1'),
-            array('id' => 2, 'title' => 'Book 2'),
-            array('id' => 3, 'title' => 'Book 3'),
-            array('id' => 4, 'title' => 'Book 4')
-        );*/
-
-        /*return response()->json([
-            'books' => $books
-        ]);*/
         return view('books', ['books' => $books]);
-
     }
 
     /**
@@ -98,6 +83,8 @@ class BooksController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return response()->json([
+            'id' => $id
+        ]);
     }
 }
