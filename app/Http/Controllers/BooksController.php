@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Books;
 
 class BooksController extends Controller
 {
@@ -14,13 +15,18 @@ class BooksController extends Controller
     public function index()
     {
 
+        $books = Books::all();
 
-        $books = array(
+        foreach ($books as $book) {
+            echo $book->id;
+        }
+
+        /*$books = array(
             array('id' => 1, 'title' => 'Book 1'),
             array('id' => 2, 'title' => 'Book 2'),
             array('id' => 3, 'title' => 'Book 3'),
             array('id' => 4, 'title' => 'Book 4')
-        );
+        );*/
 
         /*return response()->json([
             'books' => $books

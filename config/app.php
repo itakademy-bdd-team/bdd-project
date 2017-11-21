@@ -177,6 +177,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Others
+         */
+        Krlove\EloquentModelGenerator\Provider\GeneratorServiceProvider::class,
     ],
 
     /*
