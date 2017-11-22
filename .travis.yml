@@ -4,7 +4,7 @@ php:
   - 7.0
 before_install:
 - sudo apt-get update
-- sudo apt-get install php7.0-xml
+#- sudo apt-get install php7.0-xml
 - composer install
 - cp .env.example .env
 - php artisan key:generate
