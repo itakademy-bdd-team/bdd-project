@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Validator;
+use Auth;
 use App\Books;
+use App\Role;
 
 class BooksController extends Controller
 {
@@ -14,7 +18,7 @@ class BooksController extends Controller
      */
     public function index()
     {
-
+      if(Auth::user()->hasRole('admin')){
         $books = Books::all();
 
         foreach ($books as $book) {
@@ -32,6 +36,11 @@ class BooksController extends Controller
             'books' => $books
         ]);*/
         return view('books', ['books' => $books]);
+      }
+      else {
+        return redirect('home')->with("status", "Vous n'etes pas autoriser à afficher cet page");
+
+      }
 
     }
 
