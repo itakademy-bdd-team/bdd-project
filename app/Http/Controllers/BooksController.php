@@ -86,8 +86,8 @@ class BooksController extends Controller
      */
     public function destroy($id)
     {
-        return response()->json([
-            'id' => $id
-        ]);
+        $books = Books::findOrFail($id);
+        Books::destroy($id);
+        return redirect(route('books.index', $books->id));
     }
 }

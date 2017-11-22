@@ -76,7 +76,10 @@
                     <li>
                         <a class="btn btn-primary btn-lg" href="{{ route('books.show', ['id' => $book['id']] ) }}">{{ $book['title'] }}</a>
                         <a class="btn btn-primary btn-lg" href="{{ route('books.edit', ['id' => $book['id']] ) }}">Edit</a>
-                        <a class="btn btn-primary btn-lg" href="{{ route('books.destroy', ['id' => $book['id']] ) }}">Delete</a>
+                        {!! Form::open(['method' => 'DELETE', 'route' => ['books.destroy', $book['id']]]) !!}
+                            {!! Form::submit('Delete', ['onclick' => "return confirm('Supprimer ?')"]) !!}
+                        {!! Form::close() !!}
+
                     </li>
                 @endforeach
                 </ul>
