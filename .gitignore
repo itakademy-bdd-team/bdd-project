@@ -1,5 +1,8 @@
 /node_modules
 /public/hot
+/public/html/*
+/build/*
+/html/*
 /public/storage
 /public/adminer.php
 /storage/*.key
