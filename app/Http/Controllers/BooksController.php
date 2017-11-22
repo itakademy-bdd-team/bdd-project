@@ -102,13 +102,12 @@ class BooksController extends Controller
      */
     public function destroy($id)
     {
-      if(Auth::user()->hasRole('admin')){
-        return response()->json([
-            'id' => $id
-        ]);
-      }
-      else {
-      return redirect('books')->with("status", "Vous n'etes pas autoriser à afficher cet page");
-      }
+        if(Auth::user()->hasRole('admin')){
+            $books = Books::findOrFail($id);
+            Books::destroy($id);
+            return redirect(route('books.index', $books->id));
+        } else {
+            return redirect('books')->with("status", "Vous n'etes pas autoriser à afficher cet page");
+        }
     }
 }
