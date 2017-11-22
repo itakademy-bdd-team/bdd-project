@@ -1,10 +1,28 @@
 <?php
 
+/**
+ * Test PHP 7.0
+ *
+ * @category Empty
+ * @package  Empty
+ * @author   Mambot <richard_bollet@hotmail.fr>
+ * @license  Private <http://private.mambot.io>
+ * @link     <http://mambot.io>
+ */
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Books;
 
+/**
+ * Test PHP 7.0
+ *
+ * @category Empty
+ * @package  Empty
+ * @author   Mambot <richard_bollet@hotmail.fr>
+ * @license  Private <http://private.mambot.io>
+ * @link     <http://mambot.io>
+ */
 class BooksController extends Controller
 {
     /**
@@ -86,8 +104,10 @@ class BooksController extends Controller
      */
     public function destroy($id)
     {
-        return response()->json([
-            'id' => $id
-        ]);
+        return response()->json(
+            array(
+                'id' => $id
+            )
+        );
     }
 }

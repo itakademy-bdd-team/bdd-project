@@ -74,9 +74,9 @@
                 <ul>
                 @foreach ($books as $book)
                     <li>
-                        <a class="btn btn-primary btn-lg" href="{{ route('books.show', ['id' => $book['id']] ) }}">{{ $book['title'] }}</a>
-                        <a class="btn btn-primary btn-lg" href="{{ route('books.edit', ['id' => $book['id']] ) }}">Edit</a>
-                        <a class="btn btn-primary btn-lg" href="{{ route('books.destroy', ['id' => $book['id']] ) }}">Delete</a>
+                        <a href="{{ route('books.show', ['id' => $book['id']] ) }}">{{ $book['title'] }}</a>
+                        <a class="btn btn-primary" href="{{ route('books.edit', ['id' => $book['id']] ) }}">Edit</a>
+                        <a class="btn btn-danger" href="{{ route('books.destroy', ['id' => $book['id']] ) }}">Delete</a>
                     </li>
                 @endforeach
                 </ul>
