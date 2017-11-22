@@ -81,7 +81,6 @@
                         {!! Form::open(['method' => 'DELETE', 'route' => ['books.destroy', $book['id']]]) !!}
                             {!! Form::submit('Delete', ['onclick' => "return confirm('Supprimer ?')"]) !!}
                         {!! Form::close() !!}
-
                     </li>
                 @endforeach
                 </ul>

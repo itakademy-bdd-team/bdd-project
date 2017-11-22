@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Test PHP 7.0
+ *
+ * @category Empty
+ * @package  Empty
+ * @author   Mambot <richard_bollet@hotmail.fr>
+ * @license  Private <http://private.mambot.io>
+ * @link     <http://mambot.io>
+ */
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -9,6 +18,15 @@ use Auth;
 use App\Books;
 use App\Role;
 
+/**
+ * Test PHP 7.0
+ *
+ * @category Empty
+ * @package  Empty
+ * @author   Mambot <richard_bollet@hotmail.fr>
+ * @license  Private <http://private.mambot.io>
+ * @link     <http://mambot.io>
+ */
 class BooksController extends Controller
 {
     /**
@@ -110,4 +128,5 @@ class BooksController extends Controller
             return redirect('books')->with("status", "Vous n'etes pas autoriser à afficher cet page");
         }
     }
+    
 }
