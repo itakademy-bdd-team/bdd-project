@@ -69,17 +69,18 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    List of books
+                   {{  $book['title'] }}
                 </div>
                 <ul>
-                @foreach ($books as $book)
-                    <li>
-                        <a class="btn btn-primary btn-lg" href="{{ route('books.show', ['id' => $book['id']] ) }}">{{ $book['title'] }}</a>
-                        <a class="btn btn-primary btn-lg" href="{{ route('books.edit', ['id' => $book['id']] ) }}">Edit</a>
-                        <a class="btn btn-primary btn-lg" href="{{ route('books.destroy', ['id' => $book['id']] ) }}">Delete</a>
-                    </li>
-                @endforeach
+                    <li><b>ISBN :</b> {{  $book['isbn'] }}</li>
+                    <li><b>AUTHOR :</b> {{  $book['author'] }}</li>
+                    <li><b>SUMMARY :</b> {{  $book['summary'] }}</li>
+                    <li><b>PUBLISHER :</b> {{  $book['publisher'] }}</li>
+                    <li><b>YEAR :</b> {{  $book['year'] }}</li>
+                    <li><b>CREATED AT :</b> {{  $book['created_at'] }}</li>
+                    <li><b>UPDATED AT :</b> {{  $book['updated_at'] }}</li>
                 </ul>
+
             </div>
         </div>
     </body>
