@@ -12,11 +12,17 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('roles')->insert([
+        DB::table('users')->insert([
             'name' => 'admin',
+            'email' => 'admin@domain.com',
+            'password' => bcrypt('0000'),
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
-        DB::table('roles')->insert([
-            'name' => 'utilisateur',
+        DB::table('users')->insert([
+            'name' => 'user',
+            'email' => 'user@domain.com',
+            'password' => bcrypt('0000'),
+            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
     }
 }

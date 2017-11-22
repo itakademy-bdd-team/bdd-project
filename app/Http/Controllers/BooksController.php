@@ -105,7 +105,7 @@ class BooksController extends Controller
         if(Auth::user()->hasRole('admin')){
             $books = Books::findOrFail($id);
             Books::destroy($id);
-            return redirect(route('books.index', $books->id));
+            return redirect(route('books.index'));
         } else {
             return redirect('books')->with("status", "Vous n'etes pas autoriser à afficher cet page");
         }
