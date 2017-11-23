@@ -17,6 +17,7 @@ before_install:
 - wget https://phar.phpunit.de/phpcpd.phar
 - wget http://phpdox.de/releases/phpdox.phar
 - wget https://phar.phpunit.de/phploc.phar
+- wget http://static.pdepend.org/php/latest/pdepend.phar
 test:
   adapter: mysql2
   database: scotchbox
@@ -25,4 +26,5 @@ test:
 before_script:
   - php phpcpd.phar app/Http/Controllers/BooksController.php
   - php phpdox.phar
-  - php phploc.phar
+  - php phploc.phar app/
+  - php pdepend.phar --summary-xml=/tmp/sum.xml app/
