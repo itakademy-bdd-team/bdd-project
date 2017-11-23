@@ -2,10 +2,18 @@ language: php
 
 php:
   - 7.0
+services:
+  - mysql
 before_install:
+- mysql -e 'CREATE DATABASE scotchbox;'
 - sudo apt-get update
 #- sudo apt-get install php7.0-xml
 - composer update
 - cp .env.example .env
 - php artisan key:generate
 - php artisan migrate --seed
+test:
+  adapter: mysql2
+  database: scotchbox
+  username: travis
+  encoding: utf8
