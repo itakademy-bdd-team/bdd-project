@@ -180,7 +180,6 @@ return [
         /*
          * Others
          */
-        Krlove\EloquentModelGenerator\Provider\GeneratorServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
     ],
 
