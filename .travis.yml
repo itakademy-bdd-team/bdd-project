@@ -19,5 +19,5 @@ test:
   username: travis
   encoding: utf8
 before_script:
-  - cd vendor/bin/
-  - php phpcpd ../../app/Http/Controllers/BooksController.php
+  - wget https://phar.phpunit.de/phpcpd.phar
+  - php phpcpd.phar app/Http/Controllers/BooksController.php
