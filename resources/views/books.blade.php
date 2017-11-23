@@ -19,13 +19,13 @@
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
-                height: 100vh;
+                /*height: 100vh;*/
                 margin: 0;
             }
 
-            .full-height {
+            /*.full-height {
                 height: 100vh;
-            }
+            }*/
 
             .flex-center {
                 align-items: center;
@@ -81,11 +81,11 @@
                 <ul>
                 @foreach ($books as $book)
                     <li>
-                        <a class="btn btn-primary btn-lg" href="{{ route('books.show', ['id' => $book['id']] ) }}">{{ $book['title'] }}</a>
-                        <a class="btn btn-primary btn-lg" href="{{ route('books.edit', ['id' => $book['id']] ) }}">Edit</a>
-                        {!! Form::open(['method' => 'DELETE', 'route' => ['books.destroy', $book['id']]]) !!}
+                        <a href="{{ route('books.show', ['id' => $book['id']] ) }}">{{ $book['title'] }}</a>
+                        <a class="btn btn-primary btn-sm" href="{{ route('books.edit', ['id' => $book['id']] ) }}">Edit</a>
+                        <a >{!! Form::open(['method' => 'DELETE', 'route' => ['books.destroy', $book['id']]]) !!}
                             {!! Form::submit('Delete', ['onclick' => "return confirm('Supprimer ?')"]) !!}
-                        {!! Form::close() !!}
+                        {!! Form::close() !!}</a>
                     </li>
                 @endforeach
                 </ul>
