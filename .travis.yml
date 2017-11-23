@@ -19,4 +19,5 @@ test:
   username: travis
   encoding: utf8
 before_script:
+  - cd vendor/bin/
   - php phpcpd ../../app/Http/Controllers/BooksController.php
