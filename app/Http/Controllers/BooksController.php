@@ -57,13 +57,14 @@ class BooksController extends Controller
             return view('edit', compact('book'));
         } else {
             return redirect(route('books.index'))->with("status", "Vous n'etes pas autoriser à afficher cet page");
+
         }
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -82,7 +83,7 @@ class BooksController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -95,7 +96,7 @@ class BooksController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -106,14 +107,13 @@ class BooksController extends Controller
       } else {
           return redirect(route('books.index'))->with("status", "Vous n'etes pas autoriser à afficher cet page");
       }
-
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -126,12 +126,12 @@ class BooksController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        if(Auth::user()->hasRole('admin')){
+        if(Auth::user()->hasRole('admin')) {
             $books = Books::findOrFail($id);
             Books::destroy($id);
             return redirect(route('books.index'));
