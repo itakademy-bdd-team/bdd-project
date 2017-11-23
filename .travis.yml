@@ -30,4 +30,4 @@ before_script:
   - php phploc.phar app/
   - php pdepend.phar --summary-xml=/tmp/sum.xml app/Http
   - php phpmd.phar app/Http/Controllers/ text codesize,unusedcode,naming,design --ignore-violations-on-exit
-  - vendor/bin/phpcs app/Http/Controllers/BooksController.php --config-set show_warnings 0 
+  - vendor/bin/phpcs app/Http/Controllers/BooksController.php 
