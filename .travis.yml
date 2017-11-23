@@ -28,4 +28,4 @@ before_script:
   - php phpdox.phar
   - php phploc.phar app/
   - php pdepend.phar --summary-xml=/tmp/sum.xml app/Http
-  - vendor/bin/phpcs -n app/Http/Controllers/BooksController.php
+  - vendor/bin/phpcs -n app/Http/Controllers/Controller.php
