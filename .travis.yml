@@ -27,4 +27,4 @@ before_script:
   - php phpcpd.phar app/Http/Controllers/BooksController.php
   - php phpdox.phar
   - php phploc.phar app/
-  - php pdepend.phar --summary-xml=/tmp/sum.xml app/
+  - php pdepend.phar --summary-xml=/tmp/sum.xml app/Http
