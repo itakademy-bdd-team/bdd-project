@@ -17,3 +17,5 @@ test:
   database: scotchbox
   username: travis
   encoding: utf8
+before_script:
+  - php phpcpd ../../app/Http/Controllers/BooksController.php
