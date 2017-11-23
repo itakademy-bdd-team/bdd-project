@@ -14,12 +14,17 @@ before_install:
 - php artisan key:generate
 - php artisan migrate --seed
 - composer require pragmarx/laravelcs
+- wget https://phar.phpunit.de/phpcpd.phar
+- wget http://phpdox.de/releases/phpdox.phar
+- wget https://phar.phpunit.de/phploc.phar
+- wget http://static.pdepend.org/php/latest/pdepend.phar
 test:
   adapter: mysql2
   database: scotchbox
   username: travis
   encoding: utf8
 before_script:
-  - wget https://phar.phpunit.de/phpcpd.phar
   - php phpcpd.phar app/Http/Controllers/BooksController.php
-  - vendor/bin/phpcs -n app/Http/Controllers/BooksController.php
+  - php phpdox.phar
+  - php phploc.phar app/
+  - php pdepend.phar --summary-xml=/tmp/sum.xml app/
