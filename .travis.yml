@@ -23,5 +23,4 @@ test:
   encoding: utf8
 before_script:
   - php phpcpd.phar app/Http/Controllers/BooksController.php
-  - vendor/bin/phpcs -n app/Http/Controllers/BooksController.php
   - php phpdox.phar
