@@ -13,6 +13,7 @@ before_install:
 - cp .env.example .env
 - php artisan key:generate
 - php artisan migrate --seed
+- composer global require pragmarx/laravelcs
 test:
   adapter: mysql2
   database: scotchbox
