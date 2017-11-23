@@ -77,8 +77,6 @@
                     <li><b>SUMMARY :</b> {{  $book['summary'] }}</li>
                     <li><b>PUBLISHER :</b> {{  $book['publisher'] }}</li>
                     <li><b>YEAR :</b> {{  $book['year'] }}</li>
-                    <li><b>CREATED AT :</b> {{  $book['created_at'] }}</li>
-                    <li><b>UPDATED AT :</b> {{  $book['updated_at'] }}</li>
                 </ul>
 
             </div>

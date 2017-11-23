@@ -14,6 +14,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
 use Auth;
 use App\Books;
 use App\Role;
@@ -52,10 +53,10 @@ class BooksController extends Controller
     public function create()
     {
         if(Auth::user()->hasRole('admin')){
-
-        }
-        else {
-        return redirect('books')->with("status", "Vous n'etes pas autoriser à afficher cet page");
+            $book = new Books;
+            return view('edit', compact('book'));
+        } else {
+            return redirect(route('books.index'))->with("status", "Vous n'etes pas autoriser à afficher cet page");
         }
     }
 
@@ -67,7 +68,15 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $book = Books::create([
+            'isbn' => Input::get('isbn'),
+            'title' => Input::get('title'),
+            'author' => Input::get('author'),
+            'summary' => Input::get('summary'),
+            'publisher' => Input::get('publisher'),
+            'year' => Input::get('year'),
+        ]);
+        return redirect(route('books.index'))->with("status",'Book created');
     }
 
     /**
@@ -92,10 +101,10 @@ class BooksController extends Controller
     public function edit($id)
     {
       if(Auth::user()->hasRole('admin')){
-
-      }
-      else {
-      return redirect('books')->with("status", "Vous n'etes pas autoriser à afficher cet page");
+          $book = Books::findOrFail($id);
+          return view('edit', compact('book'));
+      } else {
+          return redirect(route('books.index'))->with("status", "Vous n'etes pas autoriser à afficher cet page");
       }
 
     }
@@ -109,7 +118,9 @@ class BooksController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $book = Books::findOrFail($id);
+        $book->update($request->all());
+        return redirect(route('books.index'))->with("status", 'Book modified');
     }
 
     /**
@@ -125,7 +136,7 @@ class BooksController extends Controller
             Books::destroy($id);
             return redirect(route('books.index'));
         } else {
-            return redirect('books')->with("status", "Vous n'etes pas autoriser à afficher cet page");
+            return redirect(route('books.index'))->with("status", "Vous n'etes pas autoriser à afficher cet page");
         }
     }
     

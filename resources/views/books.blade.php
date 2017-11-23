@@ -74,6 +74,7 @@
     @endif
         <div class="flex-center position-ref full-height">
             <div class="content">
+                {!! link_to_route('books.create', 'Create book') !!}
                 <div class="title m-b-md">
                     List of books
                 </div>
