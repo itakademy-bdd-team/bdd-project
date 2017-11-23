@@ -16,6 +16,7 @@ before_install:
 - composer require pragmarx/laravelcs
 - wget https://phar.phpunit.de/phpcpd.phar
 - wget http://phpdox.de/releases/phpdox.phar
+- wget https://phar.phpunit.de/phploc.phar
 test:
   adapter: mysql2
   database: scotchbox
@@ -24,3 +25,4 @@ test:
 before_script:
   - php phpcpd.phar app/Http/Controllers/BooksController.php
   - php phpdox.phar
+  - php phploc.phar
