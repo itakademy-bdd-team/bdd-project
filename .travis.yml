@@ -15,6 +15,7 @@ before_install:
 - php artisan migrate --seed
 - composer require pragmarx/laravelcs
 - wget https://phar.phpunit.de/phpcpd.phar
+- wget http://phpdox.de/releases/phpdox.phar
 test:
   adapter: mysql2
   database: scotchbox
@@ -23,3 +24,4 @@ test:
 before_script:
   - php phpcpd.phar app/Http/Controllers/BooksController.php
   - vendor/bin/phpcs -n app/Http/Controllers/BooksController.php
+  - php phpdox.phar
