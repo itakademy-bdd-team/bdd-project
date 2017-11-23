@@ -52,7 +52,7 @@ if ($book->id) {
         }
 
         .content {
-            text-align: center;
+            /*text-align: center;*/
         }
 
         .title {
@@ -79,36 +79,36 @@ if ($book->id) {
     <div class="content">
         {!! Form::model($book, array('url' => $route, 'method' => $method)) !!}
             <ul>
-                <li>
+                <p>
                     {!! Form::label('isbn', 'ISBN : ') !!}
                     {!! Form::text('isbn') !!}
                     {!! $errors->first('isbn', '<small class="help-block">:message</small>') !!}
-                </li>
-                <li>
+                </p>
+                <p>
                     {!! Form::label('title', 'TITLE : ') !!}
                     {!! Form::text('title') !!}
                     {!! $errors->first('title', '<small class="help-block">:message</small>') !!}
-                </li>
-                <li>
+                </p>
+                <p>
                     {!! Form::label('author', 'AUTHOR : ') !!}
                     {!! Form::text('author') !!}
                     {!! $errors->first('author', '<small class="help-block">:message</small>') !!}
-                </li>
-                <li>
+                </p>
+                <p>
                     {!! Form::label('summary', 'SUMMARY : ') !!}
                     {!! Form::textarea('summary') !!}
                     {!! $errors->first('summary', '<small class="help-block">:message</small>') !!}
-                </li>
-                <li>
+                </p>
+                <p>
                     {!! Form::label('publisher', 'PUBLISHER : ') !!}
                     {!! Form::text('publisher') !!}
                     {!! $errors->first('publisher', '<small class="help-block">:message</small>') !!}
-                </li>
-                <li>
+                </p>
+                <p>
                     {!! Form::label('year', 'YEAR : ') !!}
                     {!! Form::text('year') !!}
                     {!! $errors->first('year', '<small class="help-block">:message</small>') !!}
-                </li>
+                </p>
             </ul>
             {!! Form::submit('Sauvegarder') !!}
             {!! link_to('books', 'Annuler') !!}

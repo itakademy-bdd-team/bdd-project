@@ -18,9 +18,9 @@
                 background-color: #fff;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
-                font-weight: 100;
+                font-weight: 400;
                 /*height: 100vh;*/
-                margin: 0;
+                margin: 50;
             }
 
             /*.full-height {
@@ -44,7 +44,7 @@
             }
 
             .content {
-                text-align: center;
+              /*  text-align: center;*/
             }
 
             .title {
@@ -53,14 +53,13 @@
 
             .links > a {
                 color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
+                /*padding: 0 25px;*/
+                font-size: 100px;
+                /*font-weight: 600;*/
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
             }
-
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -80,13 +79,13 @@
                 </div>
                 <ul>
                 @foreach ($books as $book)
-                    <li>
+
                         <a href="{{ route('books.show', ['id' => $book['id']] ) }}">{{ $book['title'] }}</a>
-                        <a class="btn btn-primary btn-sm" href="{{ route('books.edit', ['id' => $book['id']] ) }}">Edit</a>
-                        <a >{!! Form::open(['method' => 'DELETE', 'route' => ['books.destroy', $book['id']]]) !!}
+                        <p><a class="btn btn-primary btn-sm" href="{{ route('books.edit', ['id' => $book['id']] ) }}">Edit</a></p>
+                        {!! Form::open(['method' => 'DELETE', 'route' => ['books.destroy', $book['id']]]) !!}
                             {!! Form::submit('Delete', ['onclick' => "return confirm('Supprimer ?')"]) !!}
-                        {!! Form::close() !!}</a>
-                    </li>
+                        {!! Form::close() !!}
+
                 @endforeach
                 </ul>
             </div>
