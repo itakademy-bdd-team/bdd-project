@@ -22,6 +22,4 @@ test:
 before_script:
   - wget https://phar.phpunit.de/phpcpd.phar
   - php phpcpd.phar app/Http/Controllers/BooksController.php
-  - cd vendor/bin/
-  - ls
   - vendor/bin/phpcs app/Http/Controllers/BooksController.php
